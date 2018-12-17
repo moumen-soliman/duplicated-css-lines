@@ -5,18 +5,14 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
     height: 40vmin;
-    /* duplicate line */
     display: flex;
-    /* duplicate line */
     background-color: #282c34;
   
   }
   
   .App-header {
-    /* duplicate line */
     background-color: #282c34;
     min-height: 100vh;
-    /* duplicate line */
     display: flex;
     flex-direction: column;
     align-items: center;

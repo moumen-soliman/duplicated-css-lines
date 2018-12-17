@@ -10,6 +10,11 @@ node duplicate-css-lines.js app.css //real example
 ```
 Will check duplicate lines in `app.css` and back it to you in console in array.
 
+```js
+//result
+[ 'background-color:#282c34', 'display:flex' ]
+```
+
 ### Features plan if you need to contribute choose one of them 
 - Add Colors for console with every duplicate line if contain color.
 - Count how much line duplicate in file.
