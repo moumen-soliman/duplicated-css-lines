@@ -6,7 +6,7 @@ const log = console.log;
 fs.readFile(process.argv[2], "utf8", (err, data) => {
     if (err) throw err;
     log(
-        getData(data).dupes.length > 0 ? `${chalk.red(getData(data).dupes)}`: chalk.green('Congrats you don\'t have any duplicate')
+        getData(data).dupes.length > 0 ? `${chalk.red(getData(data).dupes)} \n\n${chalk.yellow(getData(data).numberOfDuplicatedLines + ' Duplicated Lines')}` : chalk.green('Congrats you don\'t have any duplicate')
     );
 });
 
@@ -22,6 +22,7 @@ const getData = (data) => {
     let concatenate = null;
     let countOpenCurlyBraces = 0;
     let findDuplicatesCatcher = 0;
+    let numberOfDuplicatedLines = 0;
 
     //split array
     const arr = data.split('\n');
@@ -48,10 +49,12 @@ const getData = (data) => {
 
     //Return duplicates lines
     findDuplicatesCatcher = findDuplicates(arrRes);
+    numberOfDuplicatedLines = findDuplicatesCatcher.length;
     dupes = findDuplicatesCatcher.toString().replace(/\,/g, '\n');
     
     return {
         dupes,
         stringRes,
+        numberOfDuplicatedLines
     };
 }
