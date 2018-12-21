@@ -1,7 +1,10 @@
 const fs = require('fs');
+const log = console.log;
+
+//Reading second file in command after call library
 fs.readFile(process.argv[2], "utf8", (err, data) => {
     if (err) throw err;
-    console.log(
+    log(
         getData(data).dupes.length > 0 ? getData(data).dupes : 'Congrats you don\'t have any duplicate'
     );
 });
@@ -9,6 +12,7 @@ fs.readFile(process.argv[2], "utf8", (err, data) => {
 //Finding Duplicates of array
 const findDuplicates = (arr) => arr.filter((item, index) => arr.indexOf(item) != index);
 
+//function that take file data and start searching
 const getData = (data) => {
     //variables
     const arrRes = [];
@@ -39,6 +43,7 @@ const getData = (data) => {
         }
     });
 
+    //Return duplicates lines
     const dupes = findDuplicates(arrRes);
     return {
         dupes,

@@ -1,18 +1,29 @@
 const fs = require('fs');
+const log = console.log;
+
+//Reading second file in command after call library
 fs.readFile(process.argv[2], "utf8", (err, data) => {
     if (err) throw err;
-    console.log(
+    log(
         getData(data).dupes.length > 0 ? getData(data).dupes : 'Congrats you don\'t have any duplicate'
     );
 });
 
+//Finding Duplicates of array
+const findDuplicates = (arr) => arr.filter((item, index) => arr.indexOf(item) != index);
+
+//function that take file data and start searching
 const getData = (data) => {
-    let findDuplicates = Function;
-    let countOpenCurlyBraces = 0;
-    let concatenate = null;
-    let stringRes = '';
+    //variables
     const arrRes = [];
+    let stringRes = '';
+    let concatenate = null;
+    let countOpenCurlyBraces = 0;
+
+    //split array
     const arr = data.split('\n');
+
+    //foreach to working in scopes and ignore .selector and brackets
     arr.forEach((element) => {
         if (countOpenCurlyBraces == 0) {
             concatenate = false;
@@ -31,7 +42,8 @@ const getData = (data) => {
             stringRes += element.trim() + '\n';
         }
     });
-    findDuplicates = (arr) => arr.filter((item, index) => arr.indexOf(item) != index);
+
+    //Return duplicates lines
     const dupes = findDuplicates(arrRes);
     return {
         dupes,
