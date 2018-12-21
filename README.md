@@ -15,7 +15,11 @@ Will check duplicate lines in `app.scss` and back it to you in console in array.
 
 ```js
 //result
-[ 'background-color: #282c34', 'display: flex' ]
+margin: 2px;
+color: black;
+margin: 5px;
+
+3 Duplicated Lines
 ```
 
 ### Features plan if you need to contribute choose one of them 
