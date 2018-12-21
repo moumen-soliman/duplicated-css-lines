@@ -1,16 +1,40 @@
 const fs = require('fs');
-fs.readFile(process.argv[2], (err, data) =>  {
+fs.readFile(process.argv[2], "utf8", (err, data) => {
     if (err) throw err;
-    let convertedFileToObject = Object;
-    let spaceRemover = Object;
-    let findDuplicates = Function;
-    convertedFileToObject = data.toString().split('\n');
-    spaceRemover = convertedFileToObject.map(post => post.replace('{', '').replace('}', '').replace('.', '').replace(';', '').replace('img', '').replace('span', '').replace('from', '').replace(/\s+/g, '')).filter(i => i);
-    findDuplicates = (arr) => arr.filter((item, index) => arr.indexOf(item) != index);
-    const dupes = findDuplicates(spaceRemover);
-    const result = dupes.map((item) => {
-        splitted = item.split(':')
-        return { [splitted[0]]: splitted[1] };
-    });
-    console.log(result.length > 0 ? result : 'Congrats you don\'t have any duplicate')
+    console.log(
+        getData(data).dupes.length > 0 ? getData(data).dupes : 'Congrats you don\'t have any duplicate'
+    );
 });
+
+const getData = (data) => {
+    let findDuplicates = Function;
+    let countOpenCurlyBraces = 0;
+    let concatenate = null;
+    let stringRes = '';
+    const arrRes = [];
+    const arr = data.split('\n');
+    arr.forEach((element) => {
+        if (countOpenCurlyBraces == 0) {
+            concatenate = false;
+        }
+        if (element.includes('{')) {
+            countOpenCurlyBraces++;
+            concatenate = true;
+            return;
+        }
+        if (element.includes('}')) {
+            countOpenCurlyBraces--;
+            return;
+        }
+        if (concatenate) {
+            arrRes.push(element.trim());
+            stringRes += element.trim() + '\n';
+        }
+    });
+    findDuplicates = (arr) => arr.filter((item, index) => arr.indexOf(item) != index);
+    const dupes = findDuplicates(arrRes);
+    return {
+        dupes,
+        stringRes
+    };
+}
