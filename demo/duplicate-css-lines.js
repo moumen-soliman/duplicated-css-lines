@@ -1,11 +1,12 @@
 const fs = require('fs');
+const chalk = require('chalk');
 const log = console.log;
 
 //Reading second file in command after call library
 fs.readFile(process.argv[2], "utf8", (err, data) => {
     if (err) throw err;
     log(
-        getData(data).dupes.length > 0 ? getData(data).dupes : 'Congrats you don\'t have any duplicate'
+        getData(data).dupes.length > 0 ? `${chalk.red(getData(data).dupes)}`: chalk.green('Congrats you don\'t have any duplicate')
     );
 });
 
@@ -15,10 +16,12 @@ const findDuplicates = (arr) => arr.filter((item, index) => arr.indexOf(item) !=
 //function that take file data and start searching
 const getData = (data) => {
     //variables
-    const arrRes = [];
+    let dupes = null;
+    let arrRes = [];
     let stringRes = '';
     let concatenate = null;
     let countOpenCurlyBraces = 0;
+    let findDuplicatesCatcher = 0;
 
     //split array
     const arr = data.split('\n');
@@ -44,9 +47,11 @@ const getData = (data) => {
     });
 
     //Return duplicates lines
-    const dupes = findDuplicates(arrRes);
+    findDuplicatesCatcher = findDuplicates(arrRes);
+    dupes = findDuplicatesCatcher.toString().replace(/\,/g, '\n');
+    
     return {
         dupes,
-        stringRes
+        stringRes,
     };
 }

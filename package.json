@@ -2,7 +2,7 @@
   "name": "duplicated-css-lines",
   "version": "0.0.2",
   "description": "Duplicated CSS & SASS Lines it's NodeJS Library or Script to print in console what's duplicated lines in your file",
-  "main": "duplicate-css-lines.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
