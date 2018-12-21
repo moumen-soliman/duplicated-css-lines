@@ -20,7 +20,7 @@ Will check duplicate lines in `app.scss` and back it to you in console in array.
 
 ### Features plan if you need to contribute choose one of them 
 - Add Colors for console with every duplicate line if contain color.
-- Count how much line duplicate in file.
+- <s>Count how much line duplicate in file.</s>
 - Number of duplicated line in file.
 - <s>Convert multiplie `.replace` to be one function and working dynamic without duplicate.</s>
 - <s>Make function working just in scopes without take `.className` or `{ }` as a objects value.</s>
