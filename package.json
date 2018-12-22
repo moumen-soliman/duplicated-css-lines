@@ -3,9 +3,6 @@
   "version": "0.0.2",
   "description": "Duplicated CSS & SASS Lines it's NodeJS Library or Script to print in console what's duplicated lines in your file",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/moumen-soliman/duplicated-css-lines.git"
@@ -23,5 +20,8 @@
   "homepage": "https://github.com/moumen-soliman/duplicated-css-lines#readme",
   "dependencies": {
     "chalk": "^2.4.1"
+  },
+  "bin": {
+    "dup": "./cli.js"
   }
 }
