@@ -47,7 +47,7 @@ const getData = (data) => {
             return;
         }
         if (concatenate) {
-            arrRes.push(element.trim());
+            arrRes.push(element.trim().replace(/\s/g, '').replace(/\:/g, ': '));
             stringRes += element.trim() + '\n';
         }
     });
