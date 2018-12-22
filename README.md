@@ -35,4 +35,4 @@ margin: 5px;
 - Number of duplicated line in file.
 - <s>Convert multiplie `.replace` to be one function and working dynamic without duplicate.</s>
 - <s>Make function working just in scopes without take `.className` or `{ }` as a objects value.</s>
-- Convert this script to library to be installed and used.
+- <s>Convert this script to library to be installed and used.</s>
