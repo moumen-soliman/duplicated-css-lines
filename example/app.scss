@@ -1,11 +1,12 @@
 .app {
   color: black;
+  margin: $hello;
+  margin: $hello;
   .app-two {
     margin: 2px;
     .app-three {
       margin: 2px;
-      margin: 5px;
-      color: black;
+      margin: $hello;
       margin: 5px;
     }
   }

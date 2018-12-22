@@ -20,7 +20,7 @@ const getData = (data) => {
     let arrRes = [];
     let stringRes = '';
     let concatenate = null;
-    let countOpenCurlyBraces = 0;
+    let countSkipLines = 0;
     let findDuplicatesCatcher = 0;
     let numberOfDuplicatedLines = 0;
 
@@ -29,16 +29,21 @@ const getData = (data) => {
 
     //foreach to working in scopes and ignore .selector and brackets
     arr.forEach((element) => {
-        if (countOpenCurlyBraces == 0) {
+        if (countSkipLines == 0) {
             concatenate = false;
         }
         if (element.includes('{')) {
-            countOpenCurlyBraces++;
+            countSkipLines++;
             concatenate = true;
             return;
         }
+        if (element.includes('$')) {
+            countSkipLines++;
+            concatenate = true
+            return;
+        }
         if (element.includes('}')) {
-            countOpenCurlyBraces--;
+            countSkipLines--;
             return;
         }
         if (concatenate) {
