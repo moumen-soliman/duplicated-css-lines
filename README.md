@@ -23,7 +23,7 @@ margin: 5px;
 ```
 
 ### Features plan if you need to contribute choose one of them 
-- Add Colors for console with every duplicate line if contain color.
+- <s>Add Colors for console with every duplicate line.</s>
 - <s>Count how much line duplicate in file.</s>
 - Number of duplicated line in file.
 - <s>Convert multiplie `.replace` to be one function and working dynamic without duplicate.</s>
