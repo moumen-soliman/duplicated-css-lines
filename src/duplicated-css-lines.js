@@ -23,6 +23,8 @@ const getData = (data) => {
     let countSkipLines = 0;
     let findDuplicatesCatcher = 0;
     let numberOfDuplicatedLines = 0;
+    let skippedValues = ['{', '$'];
+    let unSkippedValues = ['}'];
 
     //split array
     const arr = data.split('\n');
@@ -32,17 +34,12 @@ const getData = (data) => {
         if (countSkipLines == 0) {
             concatenate = false;
         }
-        if (element.includes('{')) {
+        if (skippedValues.some(el => element.includes(el))) {
             countSkipLines++;
             concatenate = true;
             return;
         }
-        if (element.includes('$')) {
-            countSkipLines++;
-            concatenate = true
-            return;
-        }
-        if (element.includes('}')) {
+        if (unSkippedValues.some(el => element.includes(el))) {
             countSkipLines--;
             return;
         }
