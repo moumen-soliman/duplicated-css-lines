@@ -6,7 +6,7 @@ const log = console.log;
 fs.readFile(process.argv[2], "utf8", (err, data) => {
     if (err) throw err;
     log(
-        getData(data).dupes.length > 0 ? `${chalk.red(getData(data).dupes)} \n\n${chalk.yellow(getData(data).numberOfDuplicatedLines + ' Duplicated Lines')}` : chalk.green('Congrats you don\'t have any duplicate')
+        getData(data).dupes.length > 0 ? `${chalk.red(getData(data).dupes)} \n\n${chalk.yellow(getData(data).numberOfDuplicatedLines + ' Duplicated Lines')}` : chalk.green('🎉   Congrats you don\'t have any duplicate values  🎉')
     );
 });
 
