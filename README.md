@@ -27,12 +27,14 @@ margin: 5px;
 3 Duplicated Lines
 ```
 
-### Features plan if you need to contribute choose one of them 
+### Features plan if you need to contribute choose one of them:-
+- Make Package working on Vue.js (Single File Components) and catch inner `<style></style>`.
+- Make Package working on CSS in JS. 
+- Number of duplicated line in file.
 - <s>skip css `$variables` duplicated.</s>
 - <s>skip spaces between target and value.</s>
 - <s>Add Colors for console with every duplicate line.</s>
 - <s>Count how much line duplicate in file.</s>
-- Number of duplicated line in file.
 - <s>Convert multiplie `.replace` to be one function and working dynamic without duplicate.</s>
 - <s>Make function working just in scopes without take `.className` or `{ }` as a objects value.</s>
 - <s>Convert this script to library to be installed and used.</s>
