@@ -4,14 +4,19 @@ Duplicated CSS & SASS Lines it's NodeJS Library or Script to print in console wh
 ### How it works?
 `duplicate-css-lines.js` will skip `.selectors` & `{}` & `$variables` and will start to searching in scopes of your file, So you can use it with `CSS` & `SASS`, Or any nested stylesheet, Mission is make your stylesheet healthy without duplicates.
 
+#### Install Package
 ```js
-$ cd example
-
-$ node duplicate-css-lines.js <CSS file directory> //dummy example
-
-$ node duplicate-css-lines.js app.scss //real example
+npm i duplicated-css-lines
 ```
-Will check duplicate lines in `app.scss` and back it to you in console in array.
+
+#### Start using it
+
+```js
+dup <CSS file directory> //dummy example
+
+dup app.scss //real example
+```
+Will check duplicate lines in `app.scss` and back it to you in the console with number of duplicated lines.
 
 ```js
 //result
@@ -24,6 +29,7 @@ margin: 5px;
 
 ### Features plan if you need to contribute choose one of them 
 - <s>skip css `$variables` duplicated.</s>
+- <s>skip spaces between target and value.</s>
 - <s>Add Colors for console with every duplicate line.</s>
 - <s>Count how much line duplicate in file.</s>
 - Number of duplicated line in file.
