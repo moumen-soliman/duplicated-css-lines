@@ -23,7 +23,7 @@ const getData = (data) => {
     let countSkipLines = 0;
     let findDuplicatesCatcher = 0;
     let numberOfDuplicatedLines = 0;
-    let skippedValues = ['{', '$'];
+    let skippedValues = ['{', '$', '<', '>', 'var', '(' , ')', ':root'];
     let unSkippedValues = ['}'];
     
     //split array
