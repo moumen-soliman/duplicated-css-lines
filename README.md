@@ -27,7 +27,7 @@ margin: 5px;
 3 Duplicated Lines
 ```
 
-### Features plan if you need to contribute choose one of them:-
+### Features plan, Start contribute and join us :) :-
 - Make Package working on Vue.js (Single File Components) and catch inner `<style></style>`.
 - Make Package working on CSS in JS. 
 - Number of duplicated line in file.
