@@ -1,8 +1,8 @@
 # Catch duplicated CSS & SCSS lines
-Duplicated CSS & SCSS Lines it's NodeJS Library or Script to print in console what's duplicated lines in your file, Still in beta but it's works fine till now
+Duplicated CSS & SCSS Lines it's JavaScript package to print in console what's duplicated lines in your file, Still in beta but it's works fine till now
 
 ### How it works?
-`duplicate-css-lines.js` will skip `.selectors` & `{}` & `$variables` and will start to searching in scopes of your file, So you can use it with `CSS` & `SCSS`, Or any nested stylesheet with `{}`, Mission is make your stylesheet healthy without duplicates.
+`duplicate-css-lines.js` will skip `.selectors` & `{}` & `$variables` & `< >` & `var(--variable)` and will start to searching in scopes of your file, So you can use it with `CSS` & `SCSS`, Or any nested stylesheet with `{}`, Mission is make your stylesheet healthy without duplicates.
 
 #### Install Package
 ```js
