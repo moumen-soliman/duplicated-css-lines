@@ -23,7 +23,22 @@ fs.readFile(process.argv[2], "utf8", (err, data) => {
 });
 
 //Finding Duplicates of array
-const findDuplicates = (arr) => arr.filter((item, pos) => arr.indexOf(item) != pos);
+const findDuplicates = (arr) => {
+    let object = {};
+    let result = [];
+
+    arr.forEach((item) => {
+      if(!object[item])
+          object[item] = 0;
+        object[item] += 1;
+    })
+
+    for (var prop in object) {
+        object[prop] >= 2 ? result.push(prop) : '';
+    }
+
+    return result;
+}
 
 //function that take file data and start searching
 const getData = (data) => {
