@@ -1,13 +1,25 @@
 const fs = require('fs');
-const chalk = require('chalk');
 const log = console.log;
+
+//colors
+require('./components/colors');
 
 //Reading second file in command after call library
 fs.readFile(process.argv[2], "utf8", (err, data) => {
     if (err) throw err;
-    log(
-        getData(data).dupes.length > 0 ? `${chalk.red(getData(data).dupes)} \n\n${chalk.yellow(getData(data).numberOfDuplicatedLines + ' Duplicated Lines')}` : chalk.green('🎉   Congrats you don\'t have any duplicate values  🎉')
-    );
+    let resultDuplicated = '';
+    let resultNumberOfDuplicatedLines = '';
+
+    if (getData(data).dupes.length > 0) {
+        resultDuplicated = getData(data).dupes;
+        resultNumberOfDuplicatedLines = getData(data).numberOfDuplicatedLines + ' Duplicated Lines';
+    } else {
+        resultDuplicated = '\033[32m 🎉   Congrats you don\'t have any duplicate values  🎉';
+    }
+
+    log('\033[31m' + resultDuplicated);
+    resultNumberOfDuplicatedLines ? log('\033[33m \n' + resultNumberOfDuplicatedLines ) : '';
+    
 });
 
 //Finding Duplicates of array
@@ -25,7 +37,7 @@ const getData = (data) => {
     let numberOfDuplicatedLines = 0;
     let skippedValues = ['{', '$', '<', '>', 'var', '(' , ')', ':root'];
     let unSkippedValues = ['}'];
-
+    
     //split array
     const arr = data.split('\n');
 

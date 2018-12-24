@@ -18,9 +18,6 @@
     "url": "https://github.com/moumen-soliman/duplicated-css-lines/issues"
   },
   "homepage": "https://github.com/moumen-soliman/duplicated-css-lines#readme",
-  "dependencies": {
-    "chalk": "^2.4.1"
-  },
   "bin": {
     "dup": "./cli.js"
   }
