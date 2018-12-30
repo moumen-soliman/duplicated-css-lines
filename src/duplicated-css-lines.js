@@ -7,19 +7,19 @@ require('./components/colors');
 //Reading second file in command after call library
 fs.readFile(process.argv[2], "utf8", (err, data) => {
     if (err) throw err;
+    const processData = process.argv[2].includes('vue') ? data.match(/<style([\s\S]*?)style>/im).pop().split('\n') : process.argv[2].includes('css') ? data.split('\n') : data.split('\n') ;
     let resultDuplicated = '';
     let resultNumberOfDuplicatedLines = '';
-
-    if (getData(data).dupes.length > 0) {
-        resultDuplicated = getData(data).dupes;
-        resultNumberOfDuplicatedLines = getData(data).numberOfDuplicatedLines + ' Duplicated Lines';
+    
+    if (getData(processData).dupes.length > 0) {
+        resultDuplicated = getData(processData).dupes;
+        resultNumberOfDuplicatedLines = getData(processData).numberOfDuplicatedLines + ' Duplicated Lines';
     } else {
-        resultDuplicated = '\033[32m 🎉   Congrats you don\'t have any duplicate values  🎉';
+        resultDuplicated = '\033[32m 🎉   Congrats you don\'t have any style duplicate values  🎉';
     }
 
     log('\033[31m' + resultDuplicated);
     resultNumberOfDuplicatedLines ? log('\033[33m \n' + resultNumberOfDuplicatedLines ) : '';
-    
 });
 
 //Finding Duplicates of array
@@ -50,21 +50,18 @@ const getData = (data) => {
     let countSkipLines = 0;
     let findDuplicatesCatcher = 0;
     let numberOfDuplicatedLines = 0;
-    let skippedValues = ['{', '$', '<', '>', 'var', '(' , ')', ':root'];
+    let skippedValues = ['{', '$', '<', '>', 'var', ':root', '&', '--', '@', 'extends'];
     let unSkippedValues = ['}'];
-    
-    //split array
-    const arr = data.split('\n');
 
     //foreach to working in scopes and ignore .selector and brackets
-    arr.forEach((element) => {
+    data.forEach((element) => {
         if (countSkipLines == 0) {
             concatenate = false;
         }
         if (skippedValues.some(el => element.includes(el))) {
             countSkipLines++;
             concatenate = true;
-            return;
+            return; 
         }
         if (unSkippedValues.some(el => element.includes(el))) {
             countSkipLines--;

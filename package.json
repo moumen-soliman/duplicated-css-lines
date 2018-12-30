@@ -1,6 +1,6 @@
 {
   "name": "duplicated-css-lines",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "Duplicated CSS & SASS Lines it's JavaScript package to print in console what's duplicated lines in your file",
   "main": "index.js",
   "repository": {
