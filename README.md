@@ -44,4 +44,4 @@ margin: 5px;
 3 Duplicated Lines
 ```
 
-### <a href="https://github.com/moumen-soliman/duplicated-css-lines/projects/1">Todo List</a>, Start contribute and join us :) :-
+### <a href="https://github.com/moumen-soliman/duplicated-css-lines/projects/1">Todo List</a>, Start contribute and join us.
