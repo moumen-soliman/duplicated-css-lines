@@ -44,14 +44,4 @@ margin: 5px;
 3 Duplicated Lines
 ```
 
-### Features plan, Start contribute and join us :) :-
-- Make Package working on CSS in JS. 
-- Number of duplicated line in file.
-- <s>Make Package working on Vue.js (Single File Components) and catch inner `<style></style>`.</s>
-- <s>skip css `$variables` duplicated.</s>
-- <s>skip spaces between target and value.</s>
-- <s>Add Colors for console with every duplicate line.</s>
-- <s>Count how much line duplicate in file.</s>
-- <s>Convert multiplie `.replace` to be one function and working dynamic without duplicate.</s>
-- <s>Make function working just in scopes without take `.className` or `{ }` as a objects value.</s>
-- <s>Convert this script to library to be installed and used.</s>
+### <a href="https://github.com/moumen-soliman/duplicated-css-lines/projects/1">Todo List</a>, Start contribute and join us :) :-
