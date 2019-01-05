@@ -74,7 +74,7 @@ const getData = (data) => {
     });
 
     //Return duplicates lines
-    findDuplicatesCatcher = findDuplicates(arrRes);
+    findDuplicatesCatcher = findDuplicates(arrRes).filter(post => post.length > 1);
     numberOfDuplicatedLines = findDuplicatesCatcher.length;
     dupes = findDuplicatesCatcher.toString().replace(/\,/g, '\n');
     
